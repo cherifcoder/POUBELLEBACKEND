@@ -1,0 +1,38 @@
+# Dépendances Node (JAMAIS commit)
+node_modules/
+package-lock.json
+
+# Secrets (JAMAIS commit)
+.env
+.env.local
+.env.*.local
+
+# Base de données locale
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+npm-debug.log*
+
+# Système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+
+# Cloudflared / tunnels temporaires
+cloudflared.exe
+
+# Arduino
+arduino/build/
+*.hex
+*.elf
+.vercel
+.env*
