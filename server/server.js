@@ -4,6 +4,7 @@ const { DatabaseSync } = require('node:sqlite');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
+const path = require('path');
 
 const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret-change-me';
 
@@ -14,7 +15,7 @@ if (!process.env.API_KEY) {
 
 const app = express();
 app.use(express.json());
-app.use(express.static(__dirname + '/../pwa'));
+app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
 
 // On utilise une variable d'environnement pour le chemin, avec un fallback pour le local
 const DB_PATH = process.env.DB_PATH || './poubelles.db';
